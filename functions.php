@@ -40,7 +40,7 @@ function remove_menus() {
 	remove_menu_page('edit-comments.php');
 
 	$user = wp_get_current_user();
-	if ($user->wp_capabilities['administrator'] != 1) {
+	if (!in_array('administrator', $user->roles)) {
 
 			remove_submenu_page('index.php', 'update-core.php');
 		//remove_menu_page('edit.php?post_type=page');
@@ -66,63 +66,161 @@ function remove_menus() {
 			remove_submenu_page( 'options-general.php', 'options-permalink.php' );
 	}
 }
-//add_action('admin_menu', 'remove_menus');
+add_action('admin_menu', 'remove_menus');
 
 
-/* Sample Custom Post Type
- *
- * In order to use this function, uncomment "add_action(...)" at the end.
- *
- * This code will add a new type of post to the site called "news".  It will appear
- * in the dashboard and have the features mentioned in the "supports" field.
- *
- * Full documentation for register_post_type() can be found at:
- * 		http://codex.wordpress.org/Function_Reference/register_post_type
- */
+/* Custom Post Types */
 
 function custom_post_types() {
 
-	register_post_type('news', array(
-		'labels' => array(
-			'name' => 'News',
-			'singular_name' => 'News'),
-		'public' => true,
-		'hierarchical' => false,
-		'supports' => array('title', 'editor', 'excerpt', 'author'),
-		'register_meta_box_cb' => 'news_meta_add',
-		'taxonomies' => array(),
-		'has_archive' => false,
-		));
+	register_post_type('connections',
+		array(
+			'labels' => array(
+				'name' => __( 'Connections' ),
+				'singular_name' => __( 'Connection' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'connections'),
+			'supports' => array('title', 'editor', 'thumbnail'),
+			'taxonomies' => array('category')
+		)
+	);
+
+	register_post_type('headers',
+		array(
+			'labels' => array(
+				'name' => __( 'Header Images' ),
+				'singular_name' => __( 'Header Image' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'headers'),
+			'supports' => array('title', 'thumbnail')
+		)
+	);
+
+	register_post_type('leadership',
+		array(
+			'labels' => array(
+				'name' => __( 'Leadership' ),
+				'singular_name' => __( 'Leader' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'leadership'),
+			'supports' => array('title', 'editor', 'thumbnail'),
+			'taxonomies' => array('category')
+		)
+	);
+
+	register_post_type('news',
+		array(
+			'labels' => array(
+				'name' => __( 'News' ),
+				'singular_name' => __( 'News Post' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'news'),
+			'supports' => array('title', 'editor', 'thumbnail', 'author', 'excerpt'),
+			'taxonomies' => array('category')
+		)
+	);
+
+	register_post_type('rso-info',
+		array(
+			'labels' => array(
+				'name' => __( 'RSO Info Pages' ),
+				'singular_name' => __( 'RSO Info Page' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'rso-info'),
+			'supports' => array('title', 'editor', 'page-attributes'),
+			'taxonomies' => array('category'),
+			'hierarchical' => true
+		)
+	);
+
+	register_post_type('sidebar',
+		array(
+			'labels' => array(
+				'name' => __( 'Sidebar Items' ),
+				'singular_name' => __( 'Sidebar Item' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'sidebar'),
+			'supports' => array('title', 'editor')
+		)
+	);
+
+	register_post_type('monthly',
+		array(
+			'labels' => array(
+				'name' => __( 'Monthly Calendars' ),
+				'singular_name' => __( 'Monthly Calendar' )
+			),
+			'public' => true,
+			'rewrite' => array('slug' => 'monthly'),
+			'supports' => array('title', 'editor', 'thumbnail'),
+			'taxonomies' => array('category')
+		)
+	);
 }
-//add_action('init', 'custom_post_types');
+add_action('init', 'custom_post_types');
 
-
-/* Change dashboard icons for the custom post types.
- *
- * In order to use this function, uncomment "add_action(...)" at the end.
- *
- * This CSS uses an icon from the cpt_icons collection for a custom post type
- * in the dashboard.  Place the icon in the resources directory.
- */
 
 function cpt_icons() {
 
 	?>
 	<style type="text/css" media="screen">
-		#menu-posts-news .wp-menu-image {
-			background: url(<?php echo get_stylesheet_directory_uri(); ?>/resources/news.png) no-repeat 6px -17px !important;
+		#menu-posts-connections .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/connections.png) no-repeat 6px -17px !important;
 		}
-		#menu-posts-news:hover .wp-menu-image, #menu-posts-news.wp-has-current-submenu .wp-menu-image {
+		#menu-posts-headers .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/header.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-leadership .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/leadership.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-news .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/news.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-rso-info .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/infopages.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-sidebar .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/sidebar.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-weekly .wp-menu-image {
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/weekly.png) no-repeat 6px -17px !important;
+		}
+		#menu-posts-connections:hover .wp-menu-image, #menu-posts-connections.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-headers:hover .wp-menu-image, #menu-posts-headers.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-leadership:hover .wp-menu-image, #menu-posts-leadership.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-news:hover .wp-menu-image, #menu-posts-news.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-rso-info:hover .wp-menu-image, #menu-posts-rso-info.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-sidebar:hover .wp-menu-image, #menu-posts-sidebar.wp-has-current-submenu .wp-menu-image,
+		#menu-posts-weekly:hover .wp-menu-image, #menu-posts-weekly.wp-has-current-submenu .wp-menu-image {
 			background-position: 6px 7px!important;
 		}
 	</style>
 	<?php
 }
-//add_action('admin_head', 'cpt_icons');
+add_action('admin_head', 'cpt_icons');
+
+
+function filter_search ($query) {
+
+	if ($query->is_search)
+		$query->set('post_type', array('page', 'connections', 'leadership', 'news', 'rso-info', 'monthly'));
+
+	return $query;
+}
+add_filter('pre_get_posts', 'filter_search');
 
 
 /* To include other collections of functions, include_once() the relevant files here. */
 
+include_once("functions/functions-headers.php");
+include_once("functions/functions-leadership.php");
 include_once("functions/functions-nav.php");
+include_once("functions/functions-news.php");
 
 ?>
