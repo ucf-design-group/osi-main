@@ -1,0 +1,74 @@
+// Sass for the Agency Logos
+
+$totalWidth: 1200px
+$height: 100px
+$logoWidth: 120px
+$logoMidPoint: $logoWidth / 2
+$logoFile: url(resources/sprite.png)
+$numAgencies: 10
+
+header .agencies
+	
+	@extend %clearfix
+	height: $height
+	margin: auto
+	text-align: center
+	width: 1200px
+	
+	a
+		background: $logoFile no-repeat
+		float: left
+		height: $height
+		text-indent: -10000px
+		width: 120px
+
+		-webkit-transition: background-color 0.3s
+		-moz-transition: background-color 0.3s
+		-ms-transition: background-color 0.3s
+		-o-transition: background-color 0.3s
+		transition: background-color 0.3s
+
+		&:hover
+			background-color: #E3E3E3
+			border-radius: 10px
+		
+
+
+
+@for $i from 1 through ($numAgencies + 1)
+	header .agencies a:nth-child(#{$i})
+		background-position: 120 - ($i * $logoWidth) 0
+
+@media screen and (max-width: $totalWidth)
+	header .agencies
+		height: auto
+		width: 100%
+	header .agencies a
+		background-size: $totalWidth / $logoWidth * 100%
+		padding-top: $height / $totalWidth * 100%
+		line-height: 0
+		height: 0
+		
+	@for $i from 1 through ($numAgencies + 1)
+		header .agencies a:nth-child(#{$i})
+			-ms-background-position-x: ($i - 1) * $logoWidth / ($totalWidth - $logoWidth) * 100%
+			background-position: ($i - 1) * $logoWidth / ($totalWidth - $logoWidth) * 100% 0
+			width: $logoWidth / $totalWidth * 100% 
+			
+
+@media screen and (max-width: $totalWidth / 2)
+
+	header .agencies a:nth-child(#{$numAgencies / 2})
+		clear: right
+		
+	header .agencies a
+		background-size: $totalWidth / $logoWidth * 100%
+		padding-top: $height / $totalWidth * 200%
+		line-height: 0
+		height: 0
+		
+	@for $i from 1 through ($numAgencies + 1)
+		header .agencies a:nth-child(#{$i})
+			-ms-background-position-x: ($i - 1) * $logoWidth / ($totalWidth - $logoWidth) * 100%
+			background-position: ($i - 1) * $logoWidth / ($totalWidth - $logoWidth) * 100% 0
+			width: $logoWidth / $totalWidth * 200% 

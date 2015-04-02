@@ -5,6 +5,7 @@
 function setup_thumbnails() {
 
 	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(150, 150);
 }
 add_action('after_setup_theme', 'setup_thumbnails');
 
@@ -162,6 +163,46 @@ function custom_post_types() {
 			'taxonomies' => array('category')
 		)
 	);
+
+	// register_post_type('podcast', array(
+	// 'labels' 			=> array(
+	// 	'name' 				=> 'Podcasts',
+	// 	'singular_name' 	=> 'Podcast'),
+	// 'public' 			=> true,
+	// 'hierarchical' 		=> false,
+	// 'supports' 			=> array('title', 'thumbnail', 'excerpt', 'comments'),
+	// 'capability_type' => 'post',
+	// 'capabilities' => array(
+
+	// 	/**
+	// 	 * These are capabilities that will be litigated to creative users. This section
+	// 	 * does not grant them these permissions, but instead ports the capabilities
+	// 	 * from the the post type `post` so that it will act the same way as a regular
+	// 	 * post type and permissions can be distributed to different users. 
+	// 	 */
+
+	// 	/* Capabilities that will be granted to creative users */
+ //        'read'					=> 'pod_read',
+	// 	'read_posts' 			=> 'pod_read_posts',
+	// 	'create_post'			=> 'pod_create_posts',	
+	// 	'edit_post' 			=> 'pod_edit_posts',	
+	// 	'publish_posts' 		=> 'pod_publish_posts',
+	//  	'edit_published_post'	=> 'pod_edit_published_posts',
+ // 		'delete_published_post'	=> 'pod_delete_published_posts',
+	// 	'delete_posts' 			=> 'pod_delete_posts',
+
+	// 	/* Capabilities that will be explicitly removed for creative users */
+	// 	'read_private_posts'	=> 'pod_read_private_posts',
+	// 	'edit_others_posts'	 	=> 'pod_edit_others_posts',
+	// 	'delete_private_posts'  => 'pod_delete_private_posts',
+	// 	'delete_others_posts'   => 'pod_delete_others_posts',
+	// 	'edit_private_posts'    => 'pod_edit_private_posts',
+	// 	'moderate_comments'		=> 'pod_moderate_comments',
+	// 	),
+
+	// 'taxonomies' => array('category'),
+	// 'has_archive' => false
+	// ));
 }
 add_action('init', 'custom_post_types');
 
@@ -222,5 +263,6 @@ include_once("functions/functions-headers.php");
 include_once("functions/functions-leadership.php");
 include_once("functions/functions-nav.php");
 include_once("functions/functions-news.php");
-
+include_once("functions/functions-podcasts.php");
+include_once("functions/functions-user-roles.php");
 ?>

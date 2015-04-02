@@ -5,10 +5,15 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 		<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/ie.css">
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->
-		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/ui-lightness/jquery-ui-1.10.4.custom.css" />
+		<!-- <script type="text/javascript" src="//use.typekit.net/dcr2ikj.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+		<link href='http://fonts.googleapis.com/css?family=EB+Garamond|Slabo+13px' rel='stylesheet' type='text/css'>
 	</head>
 <?php
 	global $post;
@@ -22,12 +27,43 @@
 	<body <?php echo $body_class; ?>>
 		<div class="page">
 			<header>
+				<div id="featured-info">
+					<script>
+						headers = [
+<?php
+					$headerQuery = new WP_QUERY(array('post_type' => 'headers', 'posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DESC'));
+					$counter = 0;
+
+					while ($headerQuery->have_posts()) {
+
+						$headerQuery->the_post();
+						$title = get_the_title();
+						$src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+						$shade = get_post_meta($post->ID, 'header-form-shade', true);
+						$link = get_post_meta($post->ID, 'header-form-url', true);
+?>
+						<?php if ($counter) echo ","; ?>
+
+							{
+								title: "<?php echo $title; ?>",
+								src: "<?php echo $src[0]; ?>",
+								shade: "<?php echo $shade; ?>",
+								link: "<?php echo $link; ?>"
+							}
+<?php
+						$counter++;
+					}
+?>
+						];
+					</script>
+					
+					<a class="featured-event" href="<?php echo $link; ?>" style="background-image: url(<?php echo $src[0] ?>)" target="_blank"></a>
+					<div class="logo logo-<?php echo $shade; ?>"></div>
+				</div>
+
 				<nav class="main-menu full">
 					<div class="screen-reader-text skip-link"><a href="#UPDATE ME" title="Skip to content">Skip to content</a></div>
-					<div class="compact-menu">
-						<a href="#" class="menu-toggle">Menu</a>
-						<?php get_search_form(); ?>
-					</div>
+					<div class="compact-menu"><a href="#" class="menu-toggle">Menu</a></div>
 					<ul>
 <?php
 							$current_ID = $post->ID;
@@ -50,11 +86,24 @@
 <?php 							}
 							} ?>
 						<li>
-							<form method="get" id="searchform" class="searchform" action="http://localhost/wp/" role="search">
+							<form method="get" id="searchform" class="searchform" action="<?php bloginfo('home'); ?>/" role="search">
 								<input type="search" class="field" name="s" value="" id="s" placeholder="Search &#133;" />
 							</form>
 						</li>
 					</ul>
 				</nav>
+
+				<div class="agencies">
+					<a target="_blank" href="http://osi.ucf.edu/cab/">CAB</a>
+					<a target="_blank" href="http://osi.ucf.edu/homecoming/">Homecoming</a>
+					<a target="_blank" href="http://osi.ucf.edu/knight-camp/">Knight Camp</a>
+					<a target="_blank" href="http://osi.ucf.edu/knight-thon/">Knight Thon</a>
+					<a target="_blank" href="http://osi.ucf.edu/kort/">KoRT</a>
+					<a target="_blank" href="http://osi.ucf.edu/late-knights/">Late Knights</a>
+					<a target="_blank" href="http://osi.ucf.edu/sos/">SOS</a>
+					<a target="_blank" href="http://osi.ucf.edu/vucf/">Volunteer UCF</a>
+					<a target="_blank" href="http://osi.ucf.edu/rosenlife/">Rosen Life</a>
+					<a target="_blank" href="http://osi.ucf.edu/creativeservices/">Design Group</a>
+				</div>
 			</header>
 <!-- HEADER END -->

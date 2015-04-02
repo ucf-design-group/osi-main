@@ -5,22 +5,36 @@ nav.main-menu
 	
 	a
 		display: block
+		text-align: center
 		text-decoration: none
 	
 
-nav.main-menu.full ul
+nav.main-menu.full
 
-	display: block
+	ul
+		display: block
+	
+	.compact-menu
+		display: none
 	
 
-nav.main-menu.compact ul
+nav.main-menu.compact
 
-	display: none
-	width: 100%
+	ul
+		display: none
+		width: 100%
 	
 	li
 		display: block
+		
+	form
+		text-align: center
+	
+	.compact-menu
+		border-bottom: 1px solid #000000
+		display: block
+		text-align: center
 
 
-.screen-reader-text, .compact-menu
+.screen-reader-text
 	display: none
