@@ -9,14 +9,25 @@
  */
 
 
+	// Gets the GUID (Location of saved file) from the `posts` table where the parent ID of the attachment is the ID of the podcast post.
+	$audio_file = $GLOBALS['wpdb']->get_var("SELECT guid FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
+	$audio_type = $GLOBALS['wpdb']->get_var("SELECT post_mime_type FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
 
-	$audio_attachments = new WP_QUERY(array('post_type' => 'attachment', 'orderby' => 'date', 'order' => 'DESC', 'post_parent' => $post_id ));
+
+	/* Ignore this commented code (it's safety net code for later) */
+	// $attachment_ids = $GLOBALS['wpdb']->get_var("SELECT ID FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
+	// $audio_attachments = array();
+	// for($x = 0; $x < sizeof($attachment_ids); $x++) :
+	// 	array_push($audio_attachments, $attachment_ids[$x]);  
+	// endfor;
+
+	// for($x = 0; $x != sizeof($audio_attachments); $x++) :
+	// 	echo $x . ":";
+	// 	echo $audio_attachments[$x]->ID;
+	// endfor;
 
 
-	echo sizeof($audio_attachments);
-	echo wp_get_attachment_url($post->ID);
-
-	$audio_file = "http://osi.ucf.edu/wp-content/uploads/2015/04/";
+	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
 
 ?>
 
@@ -41,8 +52,7 @@
 		</div>
 		<div class="podcast-media-wrapper"> 
 			<audio controls>
-				<source src="<?php $audio_file ?>" type="audio/ogg">
-			 	<source src="<?php $audio_file ?>" type="audio/mpeg">
+				<source src="<?php echo $audio_file ?>" type="<?php echo $audio_type ?>">
 				Your browser does not support out media player
 			</audio>
 		</div>

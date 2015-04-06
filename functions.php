@@ -262,7 +262,7 @@ function cpt_icons() {
 add_action('admin_head', 'cpt_icons');
 
 
-function filter_search ($query) {
+function filter_search($query) {
 
 	if ($query->is_search)
 		$query->set('post_type', array('page', 'connections', 'leadership', 'news', 'rso-info', 'monthly'));
@@ -270,6 +270,17 @@ function filter_search ($query) {
 	return $query;
 }
 add_filter('pre_get_posts', 'filter_search');
+
+
+add_action('admin_enqueue_scripts', 'my_admin_scripts');
+ 
+function my_admin_scripts() {
+    if (isset($_GET['page']) && $_GET['page'] == 'my_plugin_page') {
+        wp_enqueue_media();
+        wp_register_script('my-admin-js', get_template_directory_uri() . '/js/my-admin.js', array('jquery'));
+        wp_enqueue_script('my-admin-js');
+    }
+}
 
 
 /* To include other collections of functions, include_once() the relevant files here. */

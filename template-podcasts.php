@@ -33,6 +33,9 @@ get_header();?>
 			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
 			<a id="apply" class="button" href="#"> Apply </a>
 		</article>
+		<article class="podcasters">
+			<h2> Podcasters </h2>
+		</article>
 	</aside>
 </div>
 

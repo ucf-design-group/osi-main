@@ -9,6 +9,7 @@
 $general-size: 125px
 
 /* Single Podcast */
+
 .podcast-wrapper
 	height: $general-size
 	width: 100%
@@ -93,49 +94,47 @@ $general-size: 125px
 			margin-bottom: 14px
 
 			p
-	
+
+		.podcast-media-wrapper
+
+			audio
+				width: 100%
+
 /* Podcasts Page */
+
 .page-podcasts
 
 	.content-area
 
-	.column, aside
-		display: table-cell
-
-	aside
-		padding-left: 2em
-		width: 320px
-		@extend %clearfix
-
-	/* Responsive */
-	@media screen and (max-width: 975px)
+		.column
+			padding-left: 30px
+			width: 900px		
 
 		.column, aside
-			display: block
-			width: 100%
+			display: table-cell
 
 		aside
-			article
-				width: 50%
+			text-align: justify
+			padding-left: 2em
+			width: 320px
+			@extend %clearfix
 
-	.column
-		width: 900px		
+			.about
 
-	// .podcast-wrapper
+				#apply
+					float: right
 
-	// 	.content-area
+			.podcasters
+				padding-top: 60px
 
-	// 		.podcast-post
-	// 			background-color: #f1f1f1
-	// 			padding: 10px 0.4% 0.4% 10px
-	// 			@extend %clearfix
-	// 			margin-bottom: 1em
+		/* Responsive */
+		@media screen and (max-width: 975px)
 
-	// 			img
-	// 				float: left
-	// 				max-width: 100%
-	// 				height: auto
-	// 				width: inherit
-	// 				padding: 5px
-	// 				//background-color: $dark
-	// 				margin: 0 20px 10px 20px
+			.column, aside
+				display: block
+				width: 100%
+
+			aside
+				article
+					width: 50%
+
