@@ -2,48 +2,38 @@
 
 /* Template Name: Podcasts */
 
-get_header(); ?>
+get_header();?>
 
-			<div class="content-area">
-				<div class="column">
-					<div class="main"> 
-						<?php
-						while (have_posts()) {
-							the_post();
-							get_template_part( 'content', 'home' );
-						} ?>
-					</div>
-
-					<section>
-						<h2>News</h2>
+<div class="content-area">
+	<!-- Podcast Posts -->
+	<div class="column">
+		<div class="main">
+			<section>
+				<h2>Podcasts</h2>
 <?php
-						$newsQuery = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
-						$counter = 0;
 
-						while ($newsQuery->have_posts()) {
+				/* Queries the database for `podcast` post instances */
+				$podcasts_query = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
 
-							$newsQuery->the_post();
-							$counter++;
-							$post_id->$post->ID;
+				/* Loops through podcasts_query for every instance of a podcast post type. */
+				while ($podcasts_query->have_posts()) {
+					$podcasts_query->the_post();
 
-
-
-							/* The html markup */ ?>
-
-							<div><?php echo $post_id; ?>
-								<?php echo get_the_post_thumbnail( $post_id, $size, $attr ); ?> 
-
-							<?php  
-						}
-
-						if ($counter == 0) {
+					/* Print out single podcast */
+					get_template_part( 'partials/single', 'podcast' );
+				}
 ?>
-							<p>There is currently no news.</p>
-<?php
-						} 
-?>
-					</section>
-				</div>
-			</div>
+			</section>
+		</div>
+	</div>
+	<!-- Sidebar -->
+	<aside>
+		<article class="about">
+			<h2> About </h2>
+			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<a id="apply" class="button" href="#"> Apply </a>
+		</article>
+	</aside>
+</div>
 
 <?php get_footer(); ?>

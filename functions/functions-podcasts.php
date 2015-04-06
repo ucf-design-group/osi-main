@@ -43,10 +43,10 @@ function podcast_meta() {
 
 	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
 
- 	$input_btn = '<input id="post_media" class="button button-primary button-large" type="file" name="post_media" value="" size="25" />';
-
+ 	$input_btn = '
+ 		<input id="post_media" class="button button-primary button-large" type="file" name="post_media" value="" size="25" />';
     $html .= '<p class="description">';
-    if( '' == get_post_meta( $post->ID, 'umb_file', true ) ) {
+    if( ! strlen(utf8_decode($filename)) > 0 ) {
       $html .= __( 'You have no file attached to this post.', 'umb' );
     } else {
       $html .= get_post_meta( $post->ID, 'umb_file', true );
@@ -82,6 +82,8 @@ function podcast_meta_save() {
 	$input['userID'] 	= wp_get_current_user()->ID; 
 	$input['username'] = wp_get_current_user()->display_name;
 	$input['timestamp'] = $date->format('U = Y-m-d H:i:s') . "\n";
+	$input['num-plays'] = 0;
+	$input['num-views'] = 0;
 
 	foreach ($input as $field => $value) {
 
@@ -125,26 +127,6 @@ function podcast_meta_save() {
 	// Generate the metadata for the attachment, and update the database record.
 	$attach_data = wp_generate_attachment_metadata( $attach_id, $filename );
 	wp_update_attachment_metadata( $attach_id, $attach_data );
-
-
-	// // If the user uploaded an image, let's upload it to the server
- //  	if( ! empty( $_FILES ) && isset( $_FILES['post_media'] ) ) {
- //    	// Upload the goal image to the uploads directory, resize the image, then upload the resized version
- //    	$goal_image_file = wp_upload_bits( $_FILES['post_media']['name'], null, wp_remote_get( $_FILES['post_media']['tmp_name'] ) );
- //    	// Set post meta about this image. Need the comment ID and need the path.
- //    	if( false == $goal_image_file['error'] ) {
- //      		// Since we've already added the key for this, we'll just update it with the file.
- //      		update_post_meta( $post_id, 'umb_file', $goal_image_file['url'] );
- //  		}
-	// }
 }
-
-// function user_can_save( $post_id, $nonce ) {
-//       $is_autosave = wp_is_post_autosave( $post_id );
-//       $is_revision = wp_is_post_revision( $post_id );
-//       $is_valid_nonce = ( isset( $_POST[ $nonce ] ) && wp_verify_nonce( $_POST[ $nonce ], plugin_basename( __FILE__ ) ) );
-//       // Return true if the user is able to save; otherwise, false.
-//       return ! ( $is_autosave || $is_revision ) && $is_valid_nonce;
-//   } // end user_can_save
 
 ?>

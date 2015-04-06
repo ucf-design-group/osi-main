@@ -14,6 +14,7 @@
 		<!-- <script type="text/javascript" src="//use.typekit.net/dcr2ikj.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 		<link href='http://fonts.googleapis.com/css?family=EB+Garamond|Slabo+13px' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
 <?php
 	global $post;
