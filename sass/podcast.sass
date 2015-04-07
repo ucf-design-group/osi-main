@@ -33,7 +33,7 @@ $general-size: 125px
 
 	.podcast-content-wrapper
 		height: inherit
-		width: auto
+		width: 60% // previous "auto"
 		display: inline-block
 		vertical-align: top
 		padding: 10px
@@ -96,6 +96,7 @@ $general-size: 125px
 			p
 
 		.podcast-media-wrapper
+			//width: 100%
 
 			audio
 				width: 100%
@@ -107,8 +108,8 @@ $general-size: 125px
 	.content-area
 
 		.column
-			padding-left: 30px
-			width: 900px		
+			padding-left: 100px
+			width: 800px
 
 		.column, aside
 			display: table-cell
@@ -120,6 +121,9 @@ $general-size: 125px
 			@extend %clearfix
 
 			.about
+
+				p
+					padding-top: 10px
 
 				#apply
 					float: right
