@@ -33,7 +33,7 @@
 
 <article class="podcast-wrapper">
 	<div class="podcast-thumb-wrapper">
-		<?php echo get_the_post_thumbnail( $post_id, 'post-thumbnail' /* Can add attributes here*/ ); ?>			
+		<?php echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' /* Can add attributes here*/ ); ?>			
 	</div>
 	<div class="podcast-content-wrapper">
 		<div class="podcast-header-wrapper">
