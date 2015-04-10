@@ -1,39 +1,45 @@
-.content
+// variables
+$bodyType: "EB Garamond", serif
 
-	.form
+.page-podcast-registration
 
-		h2
-			text-align: center
+	.content
 
-		h4
-			text-align: center
+		.form
 
-		.form-wrapper
-			width: 100%
-			height: auto
-			margin: auto
-			padding: 3em 20em 3em 20em
+			h2, h4
+				margin-left: 400px
+				font-weight: 1000
+
+			.form-wrapper
+				width: 100%
+				height: auto
+				margin: auto
+				padding: 3em 20em 3em 25em
 
 
-			fieldset
-				width: 50%
-				float: left
-				margin: 0px
+				fieldset
+					width: 50%
+					float: left
+					margin: 0px
 
-				p
-					margin: 0
-					margin-bottom: 1em
+					p
+						margin: 0
+						margin-bottom: 1em
 
-					input
-						background: rgba(255, 255, 255, 0.44)
-						color: #333
-						border: 1px solid #A4A4A4
-						padding: 4px 8px 4px 4px
-						width: 60%
-						height: 25px
+						label
+							font-family: $bodyType
 
-				.submit
+						input
+							background: rgba(255, 255, 255, 0.44)
+							color: #333
+							border: 1px solid #A4A4A4
+							padding: 4px 8px 4px 4px
+							width: 90%
+							height: 25px
 
-					.button
-						float: right
+							&:hover
+								border: 2px solid #808080
 
+						textarea
+							width: 90%
