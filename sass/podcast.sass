@@ -8,6 +8,13 @@
 /* Variables */
 $general-size: 125px
 
+@mixin box-sizing ($type: border-box)
+	-webkit-box-sizing: $type
+	-moz-box-sizing: $type
+	-o-box-sizing: $type
+	-ms-box-sizing: $type
+	box-sizing: $type
+
 /* Single Podcast */
 
 .podcast-wrapper
@@ -16,7 +23,7 @@ $general-size: 125px
 	padding: 0
 	margin: 0
 	background: none
-	margin-bottom: 15px
+	margin-bottom: 25px
 
 	.podcast-thumb-wrapper
 		height: $general-size
@@ -102,7 +109,6 @@ $general-size: 125px
 				width: 100%
 
 /* Podcasts Page */
-
 .page-podcasts
 
 	.content-area
@@ -111,21 +117,22 @@ $general-size: 125px
 		.column
 			padding-left: 25px
 			width: 800px
-
+						
 		.column, aside
 			display: table-cell
 
 		aside
 			text-align: justify
 			padding-left: 2em
-			width: 320px
-			@extend %clearfix
-
-			.about
-				width: 300px
-
-				.button
-					float: right
+			
+			.button
+				float: right
 
 			.podcasters
 				padding-top: 60px
+
+			.featured-wrapper
+				background-color: #f1f1f1
+				padding: 5px 150px /*0.4% (to be replaced with content inside)*/ 150px /*0.4*/ 5px
+				@extend %clearfix
+				margin-bottom: 1em

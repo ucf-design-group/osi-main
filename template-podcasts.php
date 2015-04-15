@@ -36,7 +36,9 @@ get_header();?>
 		<article class="podcasters">
 			<h2> Podcasters </h2>
 			<h3> Featured </h3>
-			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<!-- Tentative Feature, to be determined whether or not to keep. Keep if filtering option is going to be drop-down. Or have a link to a separate page for podcasters. -->
+			<div class="featured-wrapper">
+			</div>
 		</article>
 	</aside>
 </div>
