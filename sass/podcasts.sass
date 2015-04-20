@@ -1,0 +1,138 @@
+/* *
+ * Podcasts (Sass) 
+ * 
+ * This sass file litigates how podcast elements will be displayed under
+ * the /podcasts section of the site.
+ */
+
+/* Variables */
+$general-size: 125px
+
+@mixin box-sizing ($type: border-box)
+	-webkit-box-sizing: $type
+	-moz-box-sizing: $type
+	-o-box-sizing: $type
+	-ms-box-sizing: $type
+	box-sizing: $type
+
+/* Single Podcast */
+
+.podcast-wrapper
+	height: $general-size
+	width: 100%
+	padding: 0
+	margin: 0
+	background: none
+	margin-bottom: 25px
+
+	.podcast-thumb-wrapper
+		height: $general-size
+		width: $general-size
+		display: inline-block
+		margin: 0
+		padding: 0
+
+		img
+			height: inherit
+			width: inherit
+			margin: 0
+			padding: 0
+
+	.podcast-content-wrapper
+		height: inherit
+		width: 70% // previous "auto"
+		display: inline-block
+		vertical-align: top
+		padding: 10px
+
+		.podcast-header-wrapper
+			width: auto
+			height: 45px
+
+			.podcast-play-button-wrapper
+				display: inline-block
+				height: 33px
+				width: 33px
+				vertical-align: top
+
+				.play-button-circle
+					height: inherit
+					width: inherit
+					border-radius: 50%
+					background-color: orange
+					color: white
+
+					/* Play button icon */
+					i
+						font-size: 16px
+						padding: 9px
+
+			.podcast-title-info
+				width: auto
+				display: inline-block
+				vertical-align: top
+
+				/* Podcast Author */
+				h5 
+					line-height: 1em
+					font-size: 12px
+					color: darkgray
+					margin: 0
+					margin-bottom: 2.5px
+
+				/* Podcast Title*/
+				h4
+					line-height: 1em
+					font-size: 22px
+					color: black
+					margin: 0
+					margin-bottom: 5px
+
+
+			.podcast-title-wrapper
+
+				margin-bottom: 10px
+				line-height: 1em
+
+				h2
+					margin: 0 !important
+
+		.podcast-description-wrapper
+			margin-bottom: 14px
+
+			p
+
+		.podcast-media-wrapper
+			//width: 100%
+
+			audio
+				width: 100%
+
+/* Podcasts Page */
+.page-podcasts
+
+	.content-area
+		padding-bottom: 50px
+
+		.column
+			padding-left: 25px
+			width: 800px
+						
+		.column, aside
+			display: table-cell
+
+		aside
+			text-align: justify
+			padding-left: 2em
+			
+			.button
+				float: right
+
+			.podcasters
+				padding-top: 60px
+
+			.featured-wrapper
+				background-color: #f1f1f1
+				padding: 5px 150px /*0.4% (to be replaced with content inside)*/ 150px /*0.4*/ 5px
+				@extend %clearfix
+				margin-bottom: 1em
