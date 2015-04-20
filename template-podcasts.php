@@ -31,13 +31,17 @@ get_header();?>
 		<article class="about">
 			<h2> About </h2>
 			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
-			<a id="apply" class="button" href="#"> Apply </a>
+			<a id="apply" class="button" href="http://osi.ucf.edu/podcasts-registration/"> Apply </a>
 		</article>
 		<article class="podcasters">
 			<h2> Podcasters </h2>
-			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<h3> Featured </h3>
+			<!-- Tentative Feature, to be determined whether or not to keep. Keep if filtering option is going to be drop-down. Or have a link to a separate page for podcasters. -->
+			<div class="featured-wrapper">
+			</div>
 		</article>
 	</aside>
 </div>
+
 
 <?php get_footer(); ?>
