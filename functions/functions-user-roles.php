@@ -20,11 +20,8 @@ function add_creative_capabilities() {
 	/* Gets the WordPress roles global variable */
 	GLOBAL $wp_roles;
 
-	$wp_roles->add_cap( 'file_upload' );
-
     /* Add global role capabilities */
     $wp_roles->add_cap( 'podcaster', 'read');
-    // $wp_roles->remove_cap( 'podcaster', 'create_posts');
     $wp_roles->add_cap( 'podcaster', 'cr_read');
     $wp_roles->add_cap( 'podcaster', 'cr_create_posts');
     $wp_roles->add_cap( 'podcaster', 'publish_posts');
