@@ -272,15 +272,41 @@ function filter_search($query) {
 add_filter('pre_get_posts', 'filter_search');
 
 
-add_action('admin_enqueue_scripts', 'my_admin_scripts');
- 
-function my_admin_scripts() {
-    if (isset($_GET['page']) && $_GET['page'] == 'my_plugin_page') {
-        wp_enqueue_media();
-        wp_register_script('my-admin-js', get_template_directory_uri() . '/js/my-admin.js', array('jquery'));
-        wp_enqueue_script('my-admin-js');
+// Loads upload-podcast.js script on podcasts upload page
+function admin_scripts_loader($hook){
+    if(in_array($hook,array("post-new.php","post.php","edit.php"))) {
+        //specifically load this javascript in post editor pages
+        wp_enqueue_script( 'podcast-script', get_template_directory_uri() . '/js/upload-podcast.js', array('jquery'), '1.0.0', true );
     }
 }
+add_action("admin_enqueue_scripts","admin_scripts_loader");
+
+
+
+// function vnm_restrictMimeTypes($mimes) {
+// 	$mimes = array(
+// 	   'jpg|jpeg|jpe' => 'image/jpeg',
+// 	   'png' => 'image/png',
+// 	);
+// }
+// add_filter('upload_mimes','vnm_restrictMimeTypes');
+
+
+function restrict_mime_types ( $mime_types ) {
+ 
+ 	$mime_types = array(
+	   'mp3' => 'audio/mp3',
+	   'ogg' => 'audio/ogg',
+	);
+	return $mime_types;
+}
+add_filter('upload_mimes', 'restrict_mime_types');
+
+function restrict_mime_types_hint() {
+	echo '</br>';
+	_e( 'Acceptable podcast file types: .mp3, .ogg');
+}
+add_action( 'post-upload-ui', 'restrict_mime_types_hint' );
 
 
 /* To include other collections of functions, include_once() the relevant files here. */

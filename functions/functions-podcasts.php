@@ -25,8 +25,8 @@ function podcast_meta_add() {
 	'Upload your podcast here',
 	'podcast_meta',
 	'podcast',
-	'high',
-	'');
+	'normal',
+	'default');
 }
 
 /**
@@ -45,21 +45,23 @@ function podcast_meta() {
 
  	$input_btn = '
  		<input id="post_media" class="button button-primary button-large" type="file" name="post_media" value="" size="25" />';
-    $html .= '<p class="description">';
+    $html = '<p class="description">';
     if( ! strlen(utf8_decode($filename)) > 0 ) {
       $html .= __( 'You have no file attached to this post.', 'umb' );
     } else {
       $html .= get_post_meta( $post->ID, 'umb_file', true );
     } // end if
     $html .= '</p><!-- /.description -->';
-    echo $filename . $html . $input_btn;
+    echo $filename . $html;
 
 
-	echo'<label for="upload_image">
-	    <input id="upload_image" type="text" size="36" name="ad_image" value="http://" /> 
-	    <input id="upload_image_button" class="button" type="button" value="Upload Image" />
+	$upload = '<label for="upload_podcast">
+	    <input id="upload_podcast" type="text" size="36" name="ad_image" value="http://" /> 
+	    <input id="upload_podcast_button" class="button" type="button" value="Upload Podcast" />
 	    <br />Enter a URL or upload an image
 	</label>';
+
+	echo $upload;
 
 }
 

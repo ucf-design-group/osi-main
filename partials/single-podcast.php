@@ -13,6 +13,15 @@
 	$audio_file = $GLOBALS['wpdb']->get_var("SELECT guid FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
 	$audio_type = $GLOBALS['wpdb']->get_var("SELECT post_mime_type FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
 
+	$args = array(
+		'post_type' => 'podcast',
+		'post_parent' => '$post->ID',
+		'mime_type' => array('audio/mp3', 'audio/ogg'),
+	);
+
+	$attached_podcast = new WP_Query($args);
+
+	echo $attached_podcast->category;
 
 	/* Ignore this commented code (it's safety net code for later) */
 	// $attachment_ids = $GLOBALS['wpdb']->get_var("SELECT ID FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
@@ -27,13 +36,12 @@
 	// endfor;
 
 
-	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
-
+	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name 
 ?>
 
 <article class="podcast-wrapper">
 	<div class="podcast-thumb-wrapper">
-		<?php echo get_the_post_thumbnail( $post_id, 'post-thumbnail' /* Can add attributes here*/ ); ?>			
+		<?php echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' /* Can add attributes here*/ ); ?>			
 	</div>
 	<div class="podcast-content-wrapper">
 		<div class="podcast-header-wrapper">
