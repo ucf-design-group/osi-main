@@ -13,7 +13,7 @@ get_header();?>
 <?php
 
 				/* Queries the database for `podcast` post instances */
-				$podcasts_query = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
+				$podcasts_query = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 5, 'orderby' => 'date', 'order' => 'DESC'));
 
 				/* Loops through $podcasts_query for every instance of a podcast post type. */
 				while ($podcasts_query->have_posts()) :
@@ -36,9 +36,17 @@ get_header();?>
 		</article>
 		<article class="podcasters">
 			<h2> Podcasters </h2>
-			<h3> Featured </h3>
-			<!-- Tentative Feature, to be determined whether or not to keep. Keep if filtering option is going to be drop-down. Or have a link to a separate page for podcasters. -->
-			<div class="featured-wrapper">
+			<!-- Tentative styling. We can have a dropdown for podcasters or use just a basic list of them. Or have a link to a separate page for podcasters. -->
+			<!-- In podcasters-wrapper, it contains a collection of the podcasters that are contributing to the website. On click of the single item in the collection, the page of podcasters will be filtered to display content only from that podcaster. -->
+			<div class="podcasters-wrapper">
+				<!-- Test -->
+				<!-- A single podcaster item will contain their profile image and name (maybe a small podcast description) -->
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. HEY HEY HEY WHERE IS DAH OVERFLOW~~~~!!!!"</p>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. HEY HEY HEY WHERE IS DAH OVERFLOW~~~~!!!!"</p>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. HEY HEY HEY WHERE IS DAH OVERFLOW~~~~!!!!"</p>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. HEY HEY HEY WHERE IS DAH OVERFLOW~~~~!!!!"</p>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. HEY HEY HEY WHERE IS DAH OVERFLOW~~~~!!!!"</p>
+				<!-- Test -->
 			</div>
 		</article>
 	</aside>
