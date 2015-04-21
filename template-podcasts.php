@@ -13,7 +13,7 @@ get_header();?>
 <?php
 
 				/* Queries the database for `podcast` post instances */
-				$podcasts_query = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC'));
+				$podcasts_query = new WP_QUERY(array('post_type' => 'podcast', 'posts_per_page' => 5, 'orderby' => 'date', 'order' => 'DESC'));
 
 				/* Loops through podcasts_query for every instance of a podcast post type. */
 				while ($podcasts_query->have_posts()) {
