@@ -277,9 +277,23 @@ function admin_scripts_loader($hook){
     if(in_array($hook,array("post-new.php","post.php","edit.php"))) {
         //specifically load this javascript in post editor pages
         wp_enqueue_script( 'podcast-script', get_template_directory_uri() . '/js/upload-podcast.js', array('jquery'), '1.0.0', true );
+	    wp_enqueue_style( 'podcast-preview' );
     }
 }
-add_action("admin_enqueue_scripts","admin_scripts_loader");
+add_action("admin_enqueue_scripts", "admin_scripts_loader");
+
+
+function init_preview_styles(){
+	wp_register_style( 'podcast-preview', get_template_directory_uri() . 'css/podcast-preview.css', array(), false, 'screen' );
+}
+add_action( 'init', 'init_preview_styles' );
+
+function enqueue_preview_styles(){
+        if ( ! is_admin() ){
+                wp_enqueue_style( 'podcast-preview' );
+        }
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_preview_styles' );
 
 
 
