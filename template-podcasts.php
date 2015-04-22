@@ -52,5 +52,27 @@ get_header();?>
 	</aside>
 </div>
 
+<script type="text/javascript">
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+			loadArticle(count);
+			count++;
+		}
+	});
+
+	function loadArticle(pageNumber) {
+		$.ajax({
+			url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+			type:'POST',
+			data:"action=inifinite_scroll&page_no=" + pageNumber + '&loop_file=loop',
+			success: function(html) {
+				$(".main").append(html);
+			}
+		});
+		return false;
+	}
+
+</script>
 
 <?php get_footer(); ?>

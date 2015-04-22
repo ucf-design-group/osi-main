@@ -322,6 +322,23 @@ function restrict_mime_types_hint() {
 }
 add_action( 'post-upload-ui', 'restrict_mime_types_hint' );
 
+/* Addition of infinite scroll */
+
+function wp_infinitepaginate() {
+
+	$loopFile		= $_POST['loop_file'];
+	$paged			= $_POST['page_no'];
+	$posts_per_page = get_option('posts_per_page');
+
+	# Load the posts
+	query_posts(array('paged' => $paged, 'post_status' => 'publish'));
+	get_template_part('loopFile');
+
+	exit;
+}
+add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // logged in
+add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user is not logged in
+
 
 /* To include other collections of functions, include_once() the relevant files here. */
 
