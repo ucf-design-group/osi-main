@@ -30,8 +30,8 @@ get_header();?>
 	<aside>
 		<article class="about">
 			<h2> About </h2>
-			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
-			<a id="apply" class="button" href="http://osi.ucf.edu/podcasts-registration/"> Apply </a>
+			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum. Erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<a id="apply" class="applicationbtn" href="http://osi.ucf.edu/podcasters-application/"> Apply </a>
 		</article>
 		<article class="podcasters">
 			<h2> Podcasters </h2>
