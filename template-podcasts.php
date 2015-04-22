@@ -54,10 +54,17 @@ get_header();?>
 
 <script type="text/javascript">
 
+	var count = 2;
+	var total = <?php echo $wp_query->max_num_pages; ?>;
+
 	$(window).scroll(function(){
 		if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-			loadArticle(count);
-			count++;
+			if (count > total) {
+				return false;
+			} else {
+				loadArticle(count);
+				count++;
+			}
 		}
 	});
 
