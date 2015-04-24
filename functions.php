@@ -326,7 +326,7 @@ add_action( 'post-upload-ui', 'restrict_mime_types_hint' );
 
 function wp_infinitepaginate() {
 
-	$loopFile		= $_POST['loop_file'];
+	//$loopFile		= $_POST['loop_file'];
 	$paged			= $_POST['page_no'];
 	$posts_per_page = get_option('posts_per_page');
 

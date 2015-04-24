@@ -1,4 +1,4 @@
-/**
+/* *
  * Podcasts (Sass) 
  * 
  * This sass file litigates how podcast elements will be displayed under
@@ -7,13 +7,6 @@
 
 /* Variables */
 $general-size: 125px
-
-@mixin box-sizing ($type: border-box)
-	-webkit-box-sizing: $type
-	-moz-box-sizing: $type
-	-o-box-sizing: $type
-	-ms-box-sizing: $type
-	box-sizing: $type
 
 /* Single Podcast */
 
@@ -100,48 +93,10 @@ $general-size: 125px
 		.podcast-description-wrapper
 			margin-bottom: 14px
 
+			p
+
 		.podcast-media-wrapper
 			//width: 100%
 
 			audio
 				width: 100%
-
-/* Podcasts Page */
-.page-podcasts
-
-	.content-area
-		padding-bottom: 50px
-
-		.column
-			padding-left: 25px
-			width: 800px
-						
-		.column, aside
-			display: table-cell
-
-		aside
-			text-align: justify
-			padding-left: 2em
-			
-			.button
-				float: right
-
-			.podcasters
-				padding-top: 60px
-
-			.podcasters-wrapper
-				background-color: #f1f1f1
-				padding: 10px 15px 10px 15px
-				max-height: 350px
-				overflow: auto
-
-				p
-					background-color: #e1e1e1
-					padding: 5px
-					margin: 5px
-
-					&:hover
-						background-color: #bdbdbd
-						border: 1px solid #b0b0b0
-						cursor: pointer
-

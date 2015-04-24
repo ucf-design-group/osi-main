@@ -44,7 +44,8 @@ function podcast_meta() {
 	wp_nonce_field(basename( __FILE__ ), 'file-upload-form-nonce' );
 
 	global $wpdb;
-	$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_parent = '$post->ID' AND post_status = 'inherit' AND post_type='attachment'");
+	$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND mime_type IS NOT NULL AND post_parent = '$post->ID' AND post_status = 'inherit'");
+	
 	$audio_attachment = get_post($attachment_id);
 	// echo  $post->ID . " " . $attachment_id . " ";
 	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
@@ -63,7 +64,7 @@ function podcast_meta() {
 	$upload = '<label for="upload_podcast">
 	    <input id="upload_podcast" type="text" size="36" name="ad_image" value="' . $guid . '" /> 
 	    <input id="upload_podcast_button" class="button" type="button" value="Upload Podcast" />
-	    <br /> ' . $attachment_status_message . '
+	    <br /> ' . $attachment_id . $attachment_status_message . '
 	</label>';
 	echo $upload;
 	
@@ -131,7 +132,7 @@ function podcast_meta_save() {
 
 	// If the file address does not exist...
 	// if(!(strlen($filename) > 0) || $filename == NULL)
-		$filename = $_POST['upload_podcast'];
+	$filename = $_POST['upload_podcast'];
 
 	// The ID of the post this attachment is for.
 	$parent_post_id = $post_id;
