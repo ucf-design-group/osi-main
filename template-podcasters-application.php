@@ -25,12 +25,10 @@ get_header();?>
 					<p>
 						<label for='podcasters-form-lname'>Last Name</label>
 						<br>
-						<br>
 						<input type="text" name="podcasters-form-lname" value="">
 					</p>
 					<p>
 						<label for='podcasters-form-major'>Major</label>
-						<br>
 						<br>
 						<input type="text" name="podcasters-form-major" value="">
 					</p>
