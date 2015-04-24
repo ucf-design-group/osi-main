@@ -44,7 +44,7 @@ function podcast_meta() {
 	wp_nonce_field(basename( __FILE__ ), 'file-upload-form-nonce' );
 
 	global $wpdb;
-	$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND mime_type IS NOT NULL AND post_parent = '$post->ID' AND post_status = 'inherit'");
+	$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND post_mime_type IS NOT NULL AND post_parent = '$post->ID' AND post_status = 'inherit'");
 	
 	$audio_attachment = get_post($attachment_id);
 	// echo  $post->ID . " " . $attachment_id . " ";

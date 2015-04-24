@@ -31,8 +31,13 @@ get_header();?>
 	<aside>
 		<article class="about">
 			<h2> About </h2>
+<<<<<<< HEAD
 			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum.</p>
 			<a id="apply" class="button" href="http://sdesosiwebdev1.sdes.ucf.edu/osi/?p=1049"> Apply </a>
+=======
+			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum. Erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<a id="apply" class="applicationbtn" href="http://osi.ucf.edu/podcasters-application/"> Apply </a>
+>>>>>>> 2cc7bab3056cd7199222b68545915b75e2433ba4
 		</article>
 		<article class="podcasters">
 			<h2> Podcasters </h2>
