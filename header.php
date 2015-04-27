@@ -58,8 +58,10 @@
 						];
 					</script>
 					
-					<a href="http://osi.ucf.edu" class="featured-event" href="<?php echo $link; ?>" style="background-image: url(<?php echo $src[0] ?>)" target="_blank"></a>
-					<div class="logo logo-<?php echo $shade; ?>"></div>
+					<a class="featured-event" href="<?php echo $link; ?>" style="background-image: url(<?php echo $src[0] ?>)"></a>
+					<a href="http://osi.ucf.edu" >
+						<div class="logo logo-<?php echo $shade; ?>"></div>
+					</a>
 				</div>
 
 				<nav class="main-menu full">
