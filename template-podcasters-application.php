@@ -2,7 +2,9 @@
 
 /* Template Name: Podcasters Application */
 
-get_header();?>
+get_header();
+
+?>
 
 <body>
 

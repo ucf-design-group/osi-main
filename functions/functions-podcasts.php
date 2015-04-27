@@ -45,7 +45,6 @@ function podcast_meta() {
 
 	global $wpdb;
 	$attachment_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_type = 'attachment' AND post_mime_type IS NOT NULL AND post_parent = '$post->ID' AND post_status = 'inherit'");
-<<<<<<< HEAD
 	$filename='';
 	if($attachment_id != NULL) {
 		$audio_attachment = get_post($attachment_id);
@@ -64,9 +63,9 @@ function podcast_meta() {
 	'<label for="upload-podcast">
 	    <input id="podcast-attachment" type="text" name="file-upload-podcast-attachment" value="' . $guid . '" /> 
 	    <input id="upload-podcast-button" class="button" type="button" name="podcast-button" value="Upload Podcast" />
-	    <br />' . $attachment_status_message . '
-=======
-	
+	    <br />' . $attachment_status_message . 
+	    ;
+
 	$audio_attachment = get_post($attachment_id);
 	// echo  $post->ID . " " . $attachment_id . " ";
 	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
