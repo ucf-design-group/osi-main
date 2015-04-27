@@ -59,13 +59,6 @@ function podcast_meta() {
     	$guid = "http://";
 	}
 
-	$upload = 
-	'<label for="upload-podcast">
-	    <input id="podcast-attachment" type="text" name="file-upload-podcast-attachment" value="' . $guid . '" /> 
-	    <input id="upload-podcast-button" class="button" type="button" name="podcast-button" value="Upload Podcast" />
-	    <br />' . $attachment_status_message . 
-	    ;
-
 	$audio_attachment = get_post($attachment_id);
 	// echo  $post->ID . " " . $attachment_id . " ";
 	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
@@ -81,21 +74,16 @@ function podcast_meta() {
     else
     	$guid = $audio_attachment->guid;
 
-	$upload = '<label for="upload_podcast">
-	    <input id="upload_podcast" type="text" size="36" name="ad_image" value="' . $guid . '" /> 
-	    <input id="upload_podcast_button" class="button" type="button" value="Upload Podcast" />
-	    <br /> ' . $attachment_id . $attachment_status_message . '
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
+	$upload = 
+	'<label for="upload-podcast">
+	    <input id="podcast-attachment" type="text" name="file-upload-podcast-attachment" value="' . $guid . '" /> 
+	    <input id="upload-podcast-button" class="button" type="button" name="podcast-button" value="Upload Podcast" />
+	    <br />' . $attachment_status_message . '
 	</label>';
 	echo $upload;
 	
 	/* Print out single podcast */
 	// get_template_part( 'partials/single', 'podcast-preview' );
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
 }
 
 
@@ -124,19 +112,16 @@ function podcast_meta_save() {
 		return $post->ID;
 	}
 
-<<<<<<< HEAD
 	// Set filename address
 	if(isset($_POST['upload-podcast']) && $_POST['upload-podcast'] != '')
 		$filename = $_POST['upload-podcast'];
 	else
 		$filename = 'there was an error retrieving the filename';
-=======
 	// $post_type = get_post_type_object($post->post_type);
 
 	// if (!current_user_can($post_type->cap->edit_post, $post_id)) {
 	// 	return $post->ID;
 	// }
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
 
 	$input = array();
 	$input['userID'] 	= wp_get_current_user()->ID; 
@@ -158,9 +143,8 @@ function podcast_meta_save() {
 	}
 
 	// $filename should be the path to a file in the upload directory.
-<<<<<<< HEAD
+	
 	$filename = $_POST['file-upload-podcast-attachment'];
-=======
 	// $filename = $_POST['post_media'];
 
 	// $based_filename = 
@@ -168,8 +152,7 @@ function podcast_meta_save() {
 	// If the file address does not exist...
 	// if(!(strlen($filename) > 0) || $filename == NULL)
 	$filename = $_POST['upload_podcast'];
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
-
+	
 	// The ID of the post this attachment is for.
 	$parent_post_id = $post_id;
 
