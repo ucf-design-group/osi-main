@@ -64,15 +64,15 @@ function podcast_meta() {
 	$filename = basename( get_attached_file( $attachment_id ) ); // Just the file name
 
 
-    if($attachment_id == NULL)
-    	$attachment_status_message = '<p><i>Select an audio file</i></p>';
-    else
-    	$attachment_status_message = '<p><i>Choose a different audio file</i></p>';
+    // if($attachment_id == NULL)
+    // 	$attachment_status_message = '<p><i>Select an audio file</i></p>';
+    // else
+    // 	$attachment_status_message = '<p><i>Choose a different audio file</i></p>';
 
-    if($audio_attachment->guid == NULL)
-    	$guid = "http://";
-    else
-    	$guid = $audio_attachment->guid;
+    // if($audio_attachment->guid == NULL)
+    // 	$guid = "http://";
+    // else
+    // 	$guid = $audio_attachment->guid;
 
 	$upload = 
 	'<label for="upload-podcast">
@@ -152,7 +152,7 @@ function podcast_meta_save() {
 	// If the file address does not exist...
 	// if(!(strlen($filename) > 0) || $filename == NULL)
 	$filename = $_POST['upload_podcast'];
-	
+
 	// The ID of the post this attachment is for.
 	$parent_post_id = $post_id;
 

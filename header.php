@@ -2,8 +2,8 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta name="viewport" content="width=device-width" />
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 		<!--[if lt IE 9]>
@@ -59,7 +59,7 @@
 					</script>
 					
 					<a class="featured-event" href="<?php echo $link; ?>" style="background-image: url(<?php echo $src[0] ?>)"></a>
-					<!-- <a href="http://osi.ucf.edu" > -->
+					<!-- <a href="<?php get_site_url() ?>" > -->
 						<div class="logo logo-<?php echo $shade; ?>"></div>
 					<!-- </a> -->
 				</div>
@@ -97,16 +97,16 @@
 				</nav>
 
 				<div class="agencies">
-					<a target="_blank" href="http://osi.ucf.edu/cab/">CAB</a>
-					<a target="_blank" href="http://osi.ucf.edu/homecoming/">Homecoming</a>
-					<a target="_blank" href="http://osi.ucf.edu/knight-camp/">Knight Camp</a>
-					<a target="_blank" href="http://osi.ucf.edu/knight-thon/">Knight Thon</a>
-					<a target="_blank" href="http://osi.ucf.edu/kort/">KoRT</a>
-					<a target="_blank" href="http://osi.ucf.edu/late-knights/">Late Knights</a>
-					<a target="_blank" href="http://osi.ucf.edu/sos/">SOS</a>
-					<a target="_blank" href="http://osi.ucf.edu/vucf/">Volunteer UCF</a>
-					<a target="_blank" href="http://osi.ucf.edu/rosenlife/">Rosen Life</a>
-					<a target="_blank" href="http://osi.ucf.edu/creativeservices/">Design Group</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/cab/">CAB</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/homecoming/">Homecoming</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/knight-camp/">Knight Camp</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/knight-thon/">Knight Thon</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/kort/">KoRT</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/late-knights/">Late Knights</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/sos/">SOS</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/vucf/">Volunteer UCF</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/rosenlife/">Rosen Life</a>
+					<a target="_blank" href="<?php echo get_site_url() ?>/creativeservices/">Design Group</a>
 				</div>
 			</header>
 <!-- HEADER END -->

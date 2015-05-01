@@ -6,12 +6,8 @@ jQuery(document).ready(function($){
  
     var podcast_upload_frame;
  
- 
-<<<<<<< HEAD
+
     jQuery('#upload-podcast-button').click(function(e) {
-=======
-    jQuery('#upload_podcast_button').click(function(e) {
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
  
         e.preventDefault();
  
@@ -37,26 +33,19 @@ jQuery(document).ready(function($){
         // and set it as the text field's value
         podcast_upload_frame.on('insert', function(){
             attachment = podcast_upload_frame.state().get('selection').first().toJSON();
-<<<<<<< HEAD
             $('#podcast-attachment').val(attachment.url);
-=======
             $('#upload_podcast').val(attachment.url);
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
         });
 
         //When a file is selected, grab the URL and set it as the text field's value
         podcast_upload_frame.on('select', function() {
             attachment = podcast_upload_frame.state().get('selection').first().toJSON();
-<<<<<<< HEAD
             $('#podcast-attachment').val(attachment.url);
-=======
             $('#upload_podcast').val(attachment.url);
->>>>>>> 5e8fa4629aaf03dacf465ce40b827551f32a085b
         });
  
         //Open the uploader dialog
         podcast_upload_frame.open();
  
-    });
- 
-}); // End document ready functionality 
+    }); // End upload-podcast-button functionality
+}); // End document ready functionality
