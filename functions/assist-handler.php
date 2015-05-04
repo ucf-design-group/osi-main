@@ -97,7 +97,7 @@ $recipient = "osiassist@ucf.edu";
 $header = "From: OSI Assist Form <" . $submitteremail . ">";
 $subject = "OSI Assist Submission: " . $eventname . " " .  date('M j, Y, g:ia', $start);
 
-$message = "The following information was submitted using the OSI Assist web form on http://osi.ucf.edu:\r\n\r\n";
+$message = "The following information was submitted using the OSI Assist web form on <?php get_site_url() ?>:\r\n\r\n";
 
 $message .= "Event: " . $eventname . "\r\n";
 $message .= "Host: " . $eventhost . "\r\n";

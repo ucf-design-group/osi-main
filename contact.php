@@ -33,11 +33,11 @@ get_header(); ?>
 						<section class= "other-inquiries">
 							<h2>Have a Question?</h2>
 							<h3>OSI Assist</h3>
-							<p>For students who need accommodations (such as translators, etc.) please visit <a href="http://osi.ucf.edu/osi-assist">Osi Assist</a> or call <a href="tel:407-823-6471">(407) 823-6471</a>.</p>
+							<p>For students who need accommodations (such as translators, etc.) please visit <a href="<?php get_site_url() ?>/osi-assist">Osi Assist</a> or call <a href="tel:407-823-6471">(407) 823-6471</a>.</p>
 							<h3>OSI Events</h3>
 							<p>Looking for information on an Agency-organized event?  Check out the website of the Agency putting on the event (the agencies are listed above).</p>
 							<h3>Registered Student Organizations (RSO<sub>s</sub>)</h3>
-							<p>Need more information about Student Organizations?  Check out the Student Orgs page (see above) or the <a href="http://osi.ucf.edu/kort/">Knights of the RoundTable website</a>.</p>
+							<p>Need more information about Student Organizations?  Check out the Student Orgs page (see above) or the <a href="<?php get_site_url() ?>/kort/">Knights of the RoundTable website</a>.</p>
 						</section>
 
 						<section class="inquiries-form">
