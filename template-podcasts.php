@@ -32,7 +32,7 @@ get_header();?>
 		<article class="about">
 			<h2> About </h2>
 			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum. Erat dictumst pede, gravida aliquet erat vestibulum.</p>
-			<a id="apply" class="applicationbtn" href="<?php get_site_url() ?>/podcasters-application/"> Apply </a>
+			<a id="apply" class="applicationbtn" href="<?php echo get_site_url() ?>/podcaster-application/"> Apply </a>
 		</article>
 		<article class="podcasters">
 			<h2> Podcasters </h2>

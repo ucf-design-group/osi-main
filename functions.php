@@ -295,16 +295,30 @@ function enqueue_preview_styles(){
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_preview_styles' );
 
+// Redirects to the error page and passes the error in the header
+// which is then parsed for in the page.
+function redirectError($error){
 
+	// Start a new session.
+	//session_start();
 
-// function vnm_restrictMimeTypes($mimes) {
-// 	$mimes = array(
-// 	   'jpg|jpeg|jpe' => 'image/jpeg',
-// 	   'png' => 'image/png',
-// 	);
-// }
-// add_filter('upload_mimes','vnm_restrictMimeTypes');
+	// Create a new variable 'error' which contains the error string
+	// to be displayed on the error page.
+//	$_SESSION['error'] = $error;
 
+	/**
+	 *  Redirect user to error page within the current session.
+	 *
+	 *  Note that because we started a new session that all variables
+	 *  associated with the session will be passed to other pages that 
+	 *  enable the session passed to it.
+	 *
+	 * For more information on sessions, look here:
+	 * http://php.net/manual/en/book.session.php
+	 */
+	 //wp_redirect( "http://sdesosiwebdev1.sdes.ucf.edu/osi/error");
+	 //exit;
+}
 
 function restrict_mime_types ( $mime_types ) {
  
