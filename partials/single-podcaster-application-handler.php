@@ -17,7 +17,6 @@ $errors = array();
 
 if($_POST != null) {
 	
-	
 	// First Name	
 	if($_POST['podcaster-application-form-fname'] == '' || $_POST['podcaster-application-form-fname'] == NULL)
 	    array_push($errors, 'first name');  
@@ -72,13 +71,25 @@ if($_POST != null) {
 		  'post_title'    => $post_title,
 		  // 'post_content'  => '',
 		  'post_status'   => 'publish',
-		  'post_author'   => 1/* User ID */,
+		  'post_author'   => $app_author,
 		  'post_type'	  => 'podcaster_application',
 		  // 'post_category' => array(8,39)
 		);
+
+		global $user_ID;
+		$new_post = array(
+			'post_title' => 'My New Post',
+			'post_content' => 'Lorem ipsum dolor sit amet...',
+			'post_status' => 'publish',
+			'post_date' => date('Y-m-d H:i:s'),
+			'post_author' => 1,
+			'post_type' => 'podcaster_application',
+			'post_category' => array(0)
+		);
+		$parent_id = wp_insert_post($new_post);
 	
 		/* Insert the post into the database and return parent ID for meta information handling */
-		$parent_id = wp_insert_post( $parent_post );
+//		$parent_id = wp_insert_post( $parent_post );
 	
 	 	$input = array();
 		$input['fname']			= $_POST['podcaster-application-form-fname']; //
@@ -104,7 +115,7 @@ if($_POST != null) {
 		}
 				
 		$errorString = "Thank you for signing up!";
-		wp_redirect( "http://sdesosiwebdev1.sdes.ucf.edu/osi/podcaster-registration-complete/");
+		wp_redirect( get_site_url() . "/osi/podcaster-registration-complete/");
 	}
 	// Generate error string with missing fields appended to the end of the string.
 	else {

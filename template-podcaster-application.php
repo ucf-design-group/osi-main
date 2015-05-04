@@ -92,5 +92,4 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 	</section>
 
 </body>
-
 <?php get_footer(); ?>
