@@ -52,7 +52,7 @@ $(document).ready(function () {
 		form = $(this);
 		formData = $("#inquiries-form").serialize();
 
-		$.ajax("http://osi.ucf.edu/osi/wp-content/themes/osi/functions/inquiry-handler.php",
+		$.ajax("<?php get_site_url() ?>/osi/wp-content/themes/osi/functions/inquiry-handler.php",
 		{
 			method: 'POST',
 			data: formData,
@@ -78,7 +78,7 @@ $(document).ready(function () {
 		form = $(this);
 		formData = $("#assist-form").serialize();
 
-		$.ajax("http://osi.ucf.edu/osi/wp-content/themes/osi/functions/assist-handler.php",
+		$.ajax("<?php get_site_url() ?>/osi/wp-content/themes/osi/functions/assist-handler.php",
 		{
 			method: 'POST',
 			data: formData,

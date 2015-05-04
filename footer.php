@@ -3,7 +3,7 @@
 		<footer>
 			<!-- IMAGES HERE -->
 			<p class="logos">
-				<a class="osi" href="http://osi.ucf.edu/">OSI</a>
+				<a class="osi" href="<?php get_site_url() ?>/">OSI</a>
 				<a class="sga" href="http://sga.ucf.edu/">SGA</a>
 				<a class="sdes" href="http://sdes.ucf.edu/">SDES</a>
 			</p>
