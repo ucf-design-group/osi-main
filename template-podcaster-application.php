@@ -13,15 +13,7 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 		<small class="error">
 <?php       
 	        /* Start printing error information */
-	        $count = 0;
-	        foreach ($errors as $error) {
-				$count++;
-				if($count == sizeof($errors) )
-				    $errorString .= $error;
-				else
-				    $errorString .= $error . ', ';
-			} 
-			echo $errorString;
+	    	echo $errorString;
 			/* End printing error message*/
 ?>
 		</small>

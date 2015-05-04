@@ -87,7 +87,8 @@
 ?>
 						<li<?php echo $nav_li_class; ?>><a href="<?php echo $link; ?>"><?php echo $name; ?></a></li>
 <?php 							}
-							} ?>
+							}
+?>
 						<li>
 							<form method="get" id="searchform" class="searchform" action="<?php bloginfo('home'); ?>/" role="search">
 								<input type="search" class="field" name="s" value="" id="s" placeholder="Search &#133;" />
@@ -97,16 +98,5 @@
 				</nav>
 
 				<div class="agencies">
-					<a target="_blank" href="<?php echo get_site_url() ?>/cab/">CAB</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/homecoming/">Homecoming</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/knight-camp/">Knight Camp</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/knight-thon/">Knight Thon</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/kort/">KoRT</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/late-knights/">Late Knights</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/sos/">SOS</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/vucf/">Volunteer UCF</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/rosenlife/">Rosen Life</a>
-					<a target="_blank" href="<?php echo get_site_url() ?>/creativeservices/">Design Group</a>
 				</div>
 			</header>
-<!-- HEADER END -->
