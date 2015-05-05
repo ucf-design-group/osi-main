@@ -41,12 +41,6 @@ get_header();?>
 			<div class="podcasters-wrapper">
 				<!-- Test -->
 				<!-- A single podcaster item will contain their profile image and name (maybe a small podcast description) -->
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
-				<div class="podcasters-single-wrapper"><div class="author-img"><?php echo get_the_post_thumbnail( $post -> ID, 'post-thumbnail');?></div><div class="author-text"><?php echo get_the_author(); ?></div></div>
 				<!-- Test -->
 			</div>
 		</article>
