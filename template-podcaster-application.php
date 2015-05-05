@@ -19,10 +19,14 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 		</small>
 
 		<article class="form" id="form">
+			
+			<div class="title-wrapper">
+				
+				<h2>Podcaster Application</h2>
 
-			<h2>Podcaster Application</h2>
-
-			<h4>Apply to become a podcaster here! Your podcasts will be featured here on the OSI site where anyone can access them! We are your new podcast hosting site! .</h4>
+				<h4>Apply to become a podcaster here! Your podcasts will be featured here on the OSI site where anyone can access them! We are your new podcast hosting site!</h4>
+			
+			</div>
 
 			<form class="form-wrapper" action='' method='POST' id='podcaster-application-form'>
 
