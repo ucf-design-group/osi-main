@@ -41,7 +41,7 @@ get_header();?>
 			<div class="podcasters-wrapper">
 				<!-- Test -->
 				<!-- A single podcaster item will contain their profile image and name (maybe a small podcast description) -->
-				<!-- Test -->
+				<p> Please insert podcasters here! :D </p>
 			</div>
 		</article>
 	</aside>
