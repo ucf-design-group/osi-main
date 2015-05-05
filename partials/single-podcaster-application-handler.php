@@ -24,6 +24,8 @@ if($_POST != null) {
 	if($_POST['podcaster-application-form-lname'] == '' || $_POST['podcaster-application-form-lname'] == NULL)
 		redirectError("last name");
 	
+	
+	
 	// Major
 	if($_POST['podcaster-application-form-major'] == '' || $_POST['podcaster-application-form-major'] == NULL)
 		array_push($errors, "major");
@@ -52,9 +54,9 @@ if($_POST != null) {
 	if($_POST['podcaster-application-form-podcast-description'] == '' || $_POST['podcaster-application-form-podcast-description'] == NULL)
 		array_push($errors, "description");
 	
-	// Variables
-	$app_author = $_POST['podcaster-application-form-fname'] . ' ' . $_POST['podcaster-application-form-lname']; // Contatenates first and last name as post author
-    $post_title = 'Podcaster Application: ' . $app_author;
+	// Removes any non-numerical value 
+	$app_author = preg_replace('/[^0-9]/', '', $_POST['podcaster-application-form-ucfid']);
+    $post_title = 'Podcaster Application: ' . $lname . ", " . $fname . " (" . $app_author . ")";
 
     if(!(sizeof($errors) > 0)) {
 	    /**
@@ -67,51 +69,47 @@ if($_POST != null) {
 	     * custom data table for this post type because WordPress already comes with
 	     * functionality to create posts like this.
 	     */
-		$parent_post= array(
+
+
+		// Create post object
+		$parent_post = array(
 		  'post_title'    => $post_title,
-		  // 'post_content'  => '',
-		  'post_status'   => 'publish',
+		  'post_status'   => 'draft',
 		  'post_author'   => $app_author,
 		  'post_type'	  => 'podcaster_application',
-		  // 'post_category' => array(8,39)
+		  'post_date' 	  => date('Y-m-d H:i:s'),
+		  'post_category' => array(0)
 		);
+		
+		// Insert the post into the database
+		$parent_id = wp_insert_post( $parent_post, $wp_error );
 
-		global $user_ID;
-		$new_post = array(
-			'post_title' => 'My New Post',
-			'post_content' => 'Lorem ipsum dolor sit amet...',
-			'post_status' => 'publish',
-			'post_date' => date('Y-m-d H:i:s'),
-			'post_author' => 1,
-			'post_type' => 'podcaster_application',
-			'post_category' => array(0)
-		);
-		$parent_id = wp_insert_post($new_post);
 	
 		/* Insert the post into the database and return parent ID for meta information handling */
 //		$parent_id = wp_insert_post( $parent_post );
 	
 	 	$input = array();
-		$input['fname']			= $_POST['podcaster-application-form-fname']; //
-		$input['lname']			= $_POST['podcaster-application-form-lname'];
+		$input['fname']			= $_POST['podcaster-application-form-fname'];
+		$input['lname']			= $_POST['podcaster-application-form-lname']; 
+		$input['ucfid']			= $app_author;
 		$input['major']			= $_POST['podcaster-application-form-major'];
 		$input['year']			= $_POST['podcaster-application-form-year'];
 		$input['gpa']			= $_POST['podcaster-application-form-gpa'];
 		$input['number']		= $_POST['podcaster-application-form-num-podcasts'];
 		$input['frequency']		= $_POST['podcaster-application-form-frequency'];
 		$input['length']		= $_POST['podcaster-application-form-podcast-length'];
-		$input['description']	= $_POST['podcaster-application-form-podcast-description']; //
+		$input['description']	= $_POST['podcaster-application-form-podcast-description']; 
 	
 		foreach ($input as $field => $value) {
 	
-			$old = get_post_meta($post_id, 'podcaster-application-form-' . $field, true);
+			$old = get_post_meta($parent_id, 'podcaster-application-form-' . $field, true);
 	
 			if ($value && '' == $old)
-				add_post_meta($post_id, 'podcaster-application-form-' . $field, $value, true );
+				add_post_meta($parent_id, 'podcaster-application-form-' . $field, $value, true );
 			else if ($value && $value != $old)
-				update_post_meta($post_id, 'podcaster-application-form-' . $field, $value);
+				update_post_meta($parent_id, 'podcaster-application-form-' . $field, $value);
 			else if ('' == $value && $old)
-				delete_post_meta($post_id, 'podcaster-application-form-' . $field, $old);
+				delete_post_meta($parent_id, 'podcaster-application-form-' . $field, $old);
 		}
 				
 		$errorString = "Thank you for signing up!";
