@@ -16,7 +16,6 @@ $errorString = "";
 $successString = "";
 $errors = array();
 
-
 $fname	= "";
 $lname	= "";
 $ucfid	= "";
@@ -51,7 +50,6 @@ if($_POST != null) {
 	// Year
 	if($_POST['podcaster-application-form-year'] == '' || $_POST['podcaster-application-form-year'] == NULL)
 		array_push($errors, "year");	
-	 
 	// GPA
 	if($_POST['podcaster-application-form-gpa'] == '' || $_POST['podcaster-application-form-gpa'] == NULL)
 		array_push($errors, "gpa");
@@ -131,20 +129,20 @@ if($_POST != null) {
 		// reset post data
 		$_POST = array_filter($_POST);
 		$successString = "Thank you for signing up!";
+				
 	}
 	// Generate error string with missing fields appended to the end of the string.
-	else {
+	else 
 		$errorString = "All fields are required. You are missing the following: ";
-	}
-	    $count = 0;
-        foreach ($errors as $error) {
-			$count++;
-			if($count == sizeof($errors) )
-			    $errorString .= $error;
-			else
-			    $errorString .= $error . ', ';
-		}	
 	
+    $count = 0;
+    foreach ($errors as $error) {
+		$count++;
+		if($count == sizeof($errors) )
+		    $errorString .= $error;
+		else
+		    $errorString .= $error . ', ';
+	}	
 }
 else
     // Debug code here - this area will be reached if the form does not have any post data.  
