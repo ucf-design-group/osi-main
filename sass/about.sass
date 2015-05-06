@@ -1,0 +1,44 @@
+.page-about
+
+	.leader
+		background-color: #f1f1f1
+		padding: 10px 0.4% 0.4% 10px
+		@extend %clearfix
+		margin-bottom: 1em
+		
+		div
+			width: 175px
+			
+			img
+				float: left
+				max-width: 100%
+				height: auto
+				width: inherit
+				padding: 5px
+				background-color: $dark
+				margin: 0 20px 10px 20px
+
+		p
+			overflow: hidden
+
+
+	@media screen and (max-width: 660px)
+		.leader
+			div
+				img
+					float: none
+
+	@media screen and (max-width: 350px)
+		
+		.leader
+
+			div
+				margin: auto
+				width: 100px
+				img
+					margin: 0 auto 10px auto
+					display: block
+					width: inherit
+
+			h2, h3, p.email
+				text-align: center

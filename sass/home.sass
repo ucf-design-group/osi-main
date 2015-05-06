@@ -1,0 +1,51 @@
+.page-home
+	
+	// .content-area
+
+	.column, aside
+		
+		display: table-cell
+	
+	aside
+		padding-left: 2em
+		width: 320px
+		@extend %clearfix
+
+	.news
+		
+		background-position: 0 
+		background-repeat: no-repeat
+		margin: 2em 0
+		padding-left: 132px
+	
+	.revealed
+
+		margin-top: 1em
+
+	@media screen and (max-width: 975px)
+
+	
+		.column, aside
+			display: block
+			width: 100%
+
+		aside
+			article
+				width: 50%
+
+	@media screen and (max-width: 700px)
+
+		aside
+			article
+				width: 100%
+
+
+	@media screen and (max-width: 375px)
+
+
+		.news
+			background-position: center top 
+			padding: 100px 0px 0px 0px
+
+			h2, h3, p
+				text-align: center

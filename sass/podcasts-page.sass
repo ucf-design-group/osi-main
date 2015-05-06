@@ -1,0 +1,62 @@
+/* *
+ * Podcasts (Sass) 
+ * 
+ * This file lays out the elements within the main podcasting page.
+ */
+
+.page-podcasts
+
+	.content-area
+		padding-bottom: 50px
+
+		.column
+			padding-left: 25px
+			width: 800px
+						
+		.column, aside
+			display: table-cell
+
+		aside
+			text-align: justify
+			padding-right: 2em
+
+			.podcasters
+				padding-top: 60px
+
+			.podcasters-wrapper
+				background-color: #f1f1f1
+				height: 350px
+				overflow: auto
+
+	@media screen and (max-width: 725px)
+
+		.content-area
+
+			aside
+				display: block
+				float: top
+				padding: 0
+				width: 100%
+
+	@media screen and (max-width: 484px)
+
+		.content-area
+
+			.column
+				padding-left: 0px
+
+				.podcast-wrapper
+					height: 275px
+
+					.podcast-thumb-wrapper
+
+						img
+							margin: 0 auto 10px auto
+							display: block
+							width: inherit
+
+					.podcast-header-wrapper
+						margin: 10px 0
+
+					.podcast-description-wrapper
+						margin: 10px 0

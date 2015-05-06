@@ -1,0 +1,72 @@
+// variables
+$bodyType: "EB Garamond", serif
+
+.page-podcaster-application
+
+	.content
+
+		.form
+
+			.title-wrapper
+				margin-left: 560px
+				margin-right: 350px
+				text-align: justify
+				width: 30%
+										
+			.form-wrapper
+				width: 100%
+				height: auto
+				margin: 0 10em 0 10em
+				padding: 1em 20em 3em 25em
+
+
+				fieldset
+					width: 70%
+					//float: left
+					margin: 0px
+
+					p
+						margin: 0
+						margin-bottom: 1em
+
+						label
+							font-family: $bodyType
+							font-weight: 900
+
+
+						small
+							font-size: small
+							font-style: italic
+
+						input
+							background: rgba(255, 255, 255, 0.44)
+							color: #333
+							border: 1px solid #A4A4A4
+							padding: 4px 8px 4px 4px
+							width: 90%
+							height: 25px
+
+							&:hover
+								border: 2px solid #808080
+
+						textarea
+							width: 90%
+
+	/* Responsive Styling */
+
+	@media screen and (max-width: 1100px)
+
+		.content
+
+			.form
+
+				.title-wrapper
+					margin-left: 50px
+					margin-right: 250px
+
+				.form-wrapper
+					margin-left: 0px
+					padding-left: 50px
+
+					fieldset
+						width: 300px

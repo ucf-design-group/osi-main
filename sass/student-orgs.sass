@@ -1,0 +1,32 @@
+.page-student-orgs
+	
+	.content-area
+
+		.column, aside
+			
+			display: table-cell
+
+		
+		aside
+			padding-left: 2em
+			width: 320px
+			@extend %clearfix
+
+
+		@media screen and (max-width: 975px)
+
+		
+			.column, aside
+				display: block
+				width: 100%
+
+			aside
+				article
+					width: 50%
+
+		@media screen and (max-width: 700px)
+
+			aside
+				article
+					width: 100%
+
