@@ -72,6 +72,7 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 						<small>How many podcasts you think you will create.</small>
 						<br>
 						<select name="podcaster-application-form-num-podcasts">
+							<option value="">Select:</option>
 							<option value="1-5">1-5</option>
 							<option value="6-15">6-15</option>
 							<option value="16-25">16-25</option>
@@ -96,7 +97,8 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 						<br>
 						<small>How long you think each podcast will be.</small>
 						<br>
-						<select name="podcaster-application-form-podcasts-length">
+						<select name="podcaster-application-form-podcast-length">
+							<option value="">Select:</option>
 							<option value="1-2">1-2 minutes</option>
 							<option value="3-10">3-10 minutes</option>
 							<option value="11-20">11-20 mintes</option>

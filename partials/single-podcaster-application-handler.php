@@ -96,7 +96,7 @@ if($_POST != null) {
 		  'post_status'   => 'draft',
 		  'post_date' 	  => date('Y-m-d H:i:s'),
 		  'post_date_gmt' => date('Y-m-d H:i:s'),
-		  'post_author'   => 1,
+		  'post_author'   => $app_author,
 		  'post_category' => array(8,39)
 		);
 		
@@ -104,8 +104,8 @@ if($_POST != null) {
 		$parent_id = wp_insert_post( $parent_post );
 	
 	 	$input = array();
-		$input['fname']			= $_POST['podcaster-application-form-fname'];
-		$input['lname']			= $_POST['podcaster-application-form-lname']; 
+		$input['fname']			= $fname;
+		$input['lname']			= $lname;
 		$input['ucfid']			= $app_author;
 		$input['major']			= $_POST['podcaster-application-form-major'];
 		$input['year']			= $_POST['podcaster-application-form-year'];
@@ -127,7 +127,9 @@ if($_POST != null) {
 				delete_post_meta($parent_id, 'podcaster-application-form-' . $field, $old);
 		}
 		// reset post data
-		$_POST = array_filter($_POST);
+		foreach(array_keys($input) as $key)
+			$_POST[$key] = NULL;
+			
 		$successString = "Thank you for signing up!";
 				
 	}
@@ -144,6 +146,5 @@ if($_POST != null) {
 		    $errorString .= $error . ', ';
 	}	
 }
-else
     // Debug code here - this area will be reached if the form does not have any post data.  
 ?>
