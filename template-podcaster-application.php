@@ -36,6 +36,11 @@ include(locate_template('partials/single-podcaster-application-handler.php'));
 						<input type="text" name="podcaster-application-form-lname" value="<?php if($lname) echo $lname; ?>">
 					</p>
 					<p>
+						<label for='podcaster-application-form-email'>Email</label>
+						<br>
+						<input type="text" name="podcaster-application-form-email" value="<?php if($email) echo $email; ?>">
+					</p>
+					<p>
 						<label for='podcaster-application-form-ucfid'>UCF ID</label>
 						<br>
 						<small>Your PID without the first letter</small>

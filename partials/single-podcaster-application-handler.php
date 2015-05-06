@@ -18,6 +18,7 @@ $errors = array();
 
 $fname	= "";
 $lname	= "";
+$email	= "";
 $ucfid	= "";
 $major	= "";
 $gpa	= "";
@@ -27,6 +28,7 @@ if($_POST != null) {
 			
 	$fname 	= $_POST['podcaster-application-form-fname'];
 	$lname 	= $_POST['podcaster-application-form-lname'];
+	$email 	= $_POST['podcaster-application-form-email'];
 	$ucfid 	= $_POST['podcaster-application-form-ucfid'];
 	$major 	= $_POST['podcaster-application-form-major'];
 	$gpa	= $_POST['podcaster-application-form-gpa'];
@@ -37,11 +39,15 @@ if($_POST != null) {
 	    array_push($errors, 'first name');  
 	// Last Name
 	if($_POST['podcaster-application-form-lname'] == '' || $_POST['podcaster-application-form-lname'] == NULL)
-		redirectError("last name");
+	    array_push($errors, 'last name');  
+	
+	// UCF ID
+	if($_POST['podcaster-application-form-email'] == '' || $_POST['podcaster-application-form-email'] == NULL)
+		array_push($errors, "email");
 	
 	// UCF ID
 	if($_POST['podcaster-application-form-ucfid'] == '' || $_POST['podcaster-application-form-ucfid'] == NULL)
-		redirectError("UCF ID");
+		array_push($errors, "UCF ID");
 	
 	// Major
 	if($_POST['podcaster-application-form-major'] == '' || $_POST['podcaster-application-form-major'] == NULL)
@@ -106,6 +112,7 @@ if($_POST != null) {
 	 	$input = array();
 		$input['fname']			= $fname;
 		$input['lname']			= $lname;
+		$input['email']			= $_POST['podcaster-application-form-email'];
 		$input['ucfid']			= $app_author;
 		$input['major']			= $_POST['podcaster-application-form-major'];
 		$input['year']			= $_POST['podcaster-application-form-year'];
