@@ -31,7 +31,7 @@ get_header();?>
 	<aside>
 		<article class="about">
 			<h2> About </h2>
-			<p>Lorem ipsum dolor sit amet, nec pulvinar integer voluptas metus etiam et, quisque nulla conubia donec sollicitudin, mollis wisi eu vehicula risus eget, sollicitudin fermentum tincidunt sed a nam. Luctus nunc ut odio rutrum, erat dictumst pede, gravida aliquet erat vestibulum. Erat dictumst pede, gravida aliquet erat vestibulum.</p>
+			<p> Interested in starting your own podcast? OSI offers all students the opportunity to create, produce, and host podcasts with professional, studio quality equipment! If you are interested in becoming a podcast star, click the apply button below to fill out the application. For more information, please contact David Oglethorpe (davido@ucf.edu).</p>
 			<a id="apply" class="applicationbtn" href="<?php echo get_site_url() ?>/podcaster-application/"> Apply </a>
 		</article>
 		<article class="podcasters">
