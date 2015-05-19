@@ -40,7 +40,7 @@ get_header();?>
 			<!-- In podcasters-wrapper, it contains a collection of the podcasters that are contributing to the website. On click of the single item in the collection, the page of podcasters will be filtered to display content only from that podcaster. -->
 			<div class="podcasters-wrapper">
 				<!-- Test -->
-					<article class="single">
+					<article class="single-wrapper">
 						<div class="podcaster-thumb-wrapper">
 							<?php echo get_the_post_thumbnail($post->ID, 'post-thumbnail'); ?>
 						</div>
