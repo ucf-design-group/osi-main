@@ -104,9 +104,9 @@
 					<a target="_blank" href="<?php echo get_site_url()?>/knight-thon/">Knight Thon</a>
 					<a target="_blank" href="<?php echo get_site_url()?>/kort/">KoRT</a>
 					<a target="_blank" href="<?php echo get_site_url()?>/late-knights/">Late Knights</a>
-					<a target="_blank" href="<?php echo get_site_url()?>/sos/">SOS</a>
+					<a target="_blank" href="<?php echo get_site_url()?>/ros/">ROS</a>
 					<a target="_blank" href="<?php echo get_site_url()?>/vucf/">Volunteer UCF</a>
 					<a target="_blank" href="<?php echo get_site_url()?>/rosenlife/">Rosen Life</a>
-					<a target="_blank" href="<?php echo get_site_url()?>/creativeservices/">Design Group</a>
+					<!--<a target="_-blank" href="<?php echo get_site_url()?>/creativeservices/">Design Group</a>-->
 				</div>
 			</header>
