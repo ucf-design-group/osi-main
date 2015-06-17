@@ -325,6 +325,9 @@ function restrict_mime_types ( $mime_types ) {
  	$mime_types = array(
 	   'mp3' => 'audio/mp3',
 	   'ogg' => 'audio/ogg',
+	   // 06.17.2015: Added back the image file type uploads. The restriction affected the other post-types as well.
+	   'jpg|jpeg' => 'image/jpeg',
+	   'png' => 'image/png'
 	);
 	return $mime_types;
 }
@@ -332,7 +335,7 @@ add_filter('upload_mimes', 'restrict_mime_types');
 
 function restrict_mime_types_hint() {
 	echo '</br>';
-	_e( 'Acceptable podcast file types: .mp3, .ogg');
+	_e( 'Acceptable podcast file types: .mp3, .ogg, .jpeg, .png');
 }
 add_action( 'post-upload-ui', 'restrict_mime_types_hint' );
 
