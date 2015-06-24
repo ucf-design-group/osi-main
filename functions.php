@@ -339,7 +339,7 @@ function restrict_mime_types_hint() {
 	if ('podcast' == get_post_type())
 		_e( 'Acceptable podcast file types: .mp3, .ogg');
 	else
-		_e( 'Acceptable file types: .jpg, .pdf');
+		_e( 'Acceptable file types: .jpg, .pdf, .png');
 
 }
 add_action( 'post-upload-ui', 'restrict_mime_types_hint' );
