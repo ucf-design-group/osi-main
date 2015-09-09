@@ -2,6 +2,7 @@
  * Podcasts (Sass) 
  * 
  * This file lays out the elements within the main podcasting page.
+ * Need to clean up code.
  */
 
 .page-podcasts
@@ -40,7 +41,7 @@
 			.podcasters-wrapper
 				height: 500px
 				overflow: auto
-				padding: 3%
+				padding: 1%
 				border-radius: 0.3rem
 				background: #fff
 				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
@@ -48,10 +49,9 @@
 				.single-wrapper
 					position: relative
 					display: block
-					padding: 2%
 					overflow: hidden
-					border-radius: 10px
 					margin-top: 2%
+					border-bottom: 1px solid #d8d8d8
 					
 					
 					&:hover
@@ -59,24 +59,30 @@
 			
 					.podcaster-thumb-wrapper
 						float: left
-						width: 35%
 						position: relative
-						height: 125px
+						width: inherit
+						height: inherit
 						border-radius: 10px
 						min-width: 130px
 						max-width: 150px
+						margin: 0
+						padding: 0
 						
 						img
-							height: 110px
-							width: 120px
+							height: 100px
+							width: 100px
 							padding: 2%
 						
-					.podcaster-author-wrapper
+					.description
 						float: left
-						width: 40%
-						padding-top: 45px
-						padding-left: 20px
+						width: 45%
 						position: relative
+
+						h4
+							font-weight: bold
+
+						p
+							font-size: .9em
 
 	@media screen and (max-width: 725px)
 

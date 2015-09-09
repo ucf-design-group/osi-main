@@ -40,14 +40,15 @@ get_header();?>
 			<!-- In podcasters-wrapper, it contains a collection of the podcasters that are contributing to the website. On click of the single item in the collection, the page of podcasters will be filtered to display content only from that podcaster. -->
 			<div class="podcasters-wrapper">
 				<!-- Test -->
-					<article class="single-wrapper">
+					<figure class="single-wrapper">
 						<div class="podcaster-thumb-wrapper">
 							<?php echo get_the_post_thumbnail($post->ID, 'post-thumbnail'); ?>
 						</div>
-						<div class="podcaster-author-wrapper">
-							<?php the_author(); ?>
+						<div class="description">
+							<h4><?php the_author(); ?></h4>
+							<p> Supporting podcasters on UCF Campus.</p>
 						</div>
-					</article>
+					</figure>
 				<!-- A single podcaster item will contain their profile image and name (maybe a small podcast description) -->
 			</div>
 		</article>
