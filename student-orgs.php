@@ -15,10 +15,10 @@
 					</div>
 				</div>
 				<aside>
-					<h3>RSO Manual</h3>
+					<h3>RSO Orientation Presentation</h3>
 					<ul>
-						<li><a href="<?php get_site_url() ?>/forms/2014-rso-manual.pdf">Official RSO Manual</a></li>
-						<li><a href="<?php get_site_url() ?>/forms/2013-2014_rso_presentation.pdf">RSO Orientation Presentation</a></li>
+						<!--<li><a href="<?php get_site_url() ?>/forms/2014-rso-manual.pdf">Official RSO Manual</a></li>-->
+						<li><a href="<?php get_site_url() ?>/forms/2015-2016_RSO_Orientation_Presentation.pdf">RSO Orientation Presentation</a></li>
 					</ul>
 					<h3>Resource Topics</h3>
 					<ul>

@@ -324,7 +324,7 @@ function restrict_mime_types ( $mime_types ) {
  
  	$mime_types = array(
 	   'mp3' => 'audio/mp3',
-	   'ogg' => 'audio/ogg',
+	   'ogg' => 'audio/wav',
 	   'jpg|jpeg' => 'image/jpeg',
 	   'png' => 'images/png',
 	   'pdf' => 'application/pdf'
@@ -337,7 +337,7 @@ function restrict_mime_types_hint() {
 	echo '</br>';
 	
 	if ('podcast' == get_post_type())
-		_e( 'Acceptable podcast file types: .mp3, .ogg');
+		_e( 'Acceptable podcast file types: .mp3, .wav');
 	else
 		_e( 'Acceptable file types: .jpg, .pdf, .png');
 
@@ -360,7 +360,6 @@ function wp_infinitepaginate() {
 }
 add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // logged in
 add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user is not logged in
-
 
 /* To include other collections of functions, include_once() the relevant files here. */
 
